@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2 class="text-center mb-4">Fresh Fruits for Sale 🍉</h2>
+<div class="row justify-content-center">
+    {% for product in products %}
+    <div class="col-md-3 col-sm-6 mb-4">
+        <div class="card shadow-sm border-0" style="border-radius: 12px;">
+            <img src="{{ product.image_url }}" class="card-img-top" alt="{{ product.name }}" style="height: 160px; object-fit: cover;">
+            <div class="card-body text-center">
+                <h5 class="card-title mb-2">{{ product.name }}</h5>
+                <p class="card-text text-success fw-bold mb-3">Ksh {{ product.price }}</p>
+                <a href="{% url 'checkout' product.id %}" class="btn btn-gold btn-sm me-2">Buy Now</a>
+                <a href="{% url 'add_to_cart' product.id %}" class="btn btn-dark btn-sm">Add to Cart</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<style>
+    .btn-gold {
+        background-color: #FFC107;
+        color: #000;
+        border: none;
+        font-weight: 600;
+    }
+    .btn-gold:hover {
+        background-color: #e0ac08;
+        color: white;
+    }
+</style>
+{% endblock %}
