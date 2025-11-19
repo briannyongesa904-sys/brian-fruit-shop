@@ -1,69 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{ product.name }} - Product Details</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            text-align: center;
-            margin-top: 50px;
-        }
-        .card {
-            background-color: white;
-            display: inline-block;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-            width: 350px;
-        }
-        img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            border-radius: 10px;
-        }
-        h1 {
-            color: #333;
-        }
-        p {
-            color: #555;
-            font-size: 18px;
-        }
-        .btn {
-            display: inline-block;
-            text-decoration: none;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 6px;
-            margin-top: 10px;
-            transition: 0.3s;
-        }
-        .buy {
-            background-color: #ff6600;
-        }
-        .buy:hover {
-            background-color: #e65c00;
-        }
-        .back {
-            background-color: #4CAF50;
-        }
-        .back:hover {
-            background-color: #43a047;
-        }
-    </style>
-</head>
-<body>
-    <div class="card">
-        <img src="{{ product.image_url }}" alt="{{ product.name }}">
-        <h1>{{ product.name }}</h1>
-        <p><strong>Price:</strong> ${{ product.price }}</p>
-        <p><strong>In stock:</strong> {{ product.stock }}</p>
+{% extends 'base.html' %}
 
-        <a href="{% url 'checkout' product.id %}" class="btn buy">Proceed to Buy</a><br>
-        <a href="{% url 'index' %}" class="btn back">Go Back</a>
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-5 col-md-7 col-sm-10">
+            <div class="card shadow-sm">
+                <img src="{{ product.image_url }}" alt="{{ product.name }}" class="card-img-top img-fluid">
+                <div class="card-body text-center">
+                    <h2 class="card-title mb-2">{{ product.name }}</h2>
+                    <p class="description mb-2">{{ product.short_description }}</p>
+                    <p class="card-text text-success fw-bold mb-3">Ksh {{ product.price }}</p>
+                    <p class="card-text mb-3"><strong>In stock:</strong> {{ product.stock }}</p>
+                    <a href="{% url 'checkout' product.id %}" class="btn btn-gold btn-lg me-2 mb-2">Proceed to Buy 🛒</a>
+                    <a href="{% url 'index' %}" class="btn btn-dark btn-lg mb-2">Go Back 🍎</a>
+                </div>
+            </div>
+        </div>
     </div>
-</body>
-</html>
-
+</div>
+{% endblock %}

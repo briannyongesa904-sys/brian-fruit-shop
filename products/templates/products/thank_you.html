@@ -1,23 +1,20 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="text-center mt-5">
-    <div class="card shadow-sm p-5 mx-auto" style="max-width: 500px;">
-        <div class="card-body">
-            <h2 class="text-success mb-3">✅ Payment Successful!</h2>
-            <p class="lead mb-4">
-                Thank you for shopping with <strong>Brian Fruits Shop 🍎</strong>!
-                Your order has been received and is being processed.
-            </p>
-
-            <div class="mb-4">
-                <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png"
-                     alt="Thank You"
-                     class="img-fluid"
-                     style="max-width: 120px;">
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-sm-10">
+            <div class="card shadow-sm p-5 text-center">
+                <h2 class="text-success mb-3">✅ Payment Successful!</h2>
+                <p class="lead mb-4">
+                    Thank you for shopping with <strong>Brian Fruits Shop 🍎</strong>! <br>
+                    Your order has been received and is being processed.
+                </p>
+                <div class="mb-4">
+                    <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Thank You" class="img-fluid" style="max-width: 120px;">
+                </div>
+                <a href="{% url 'index' %}" class="btn btn-success btn-lg w-75">🛍 Back to Home</a>
             </div>
-
-            <a href="{% url 'index' %}" class="btn btn-success btn-lg">🛍 Back to Home</a>
         </div>
     </div>
 </div>

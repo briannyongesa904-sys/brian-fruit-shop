@@ -1,16 +1,23 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="text-center mt-5">
-    <h2>Payment Page 💳</h2>
-    <p>You are paying for <strong>{{ product.name }}</strong> at <strong>Ksh {{ product.price }}</strong></p>
-    <img src="{{ product.image_url }}" alt="{{ product.name }}" width="200" class="rounded">
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-sm-10 text-center">
+            <h2 class="mb-4">Payment Page 💳</h2>
+            <img src="{{ product.image_url }}" alt="{{ product.name }}" class="img-fluid rounded mb-3" style="max-width: 200px;">
 
-    <form action="{% url 'confirm_purchase' product.id %}" method="post">
-        {% csrf_token %}
-        <button type="submit" class="btn btn-success mt-3">Confirm Payment</button>
-    </form>
+            <h4>{{ product.name }}</h4>
+            <p class="description mb-2">{{ product.short_description }}</p>
+            <p class="text-success fw-bold mb-3">Ksh {{ product.price }}</p>
 
-    <a href="{% url 'index' %}" class="btn btn-secondary mt-3">Cancel</a>
+            <form action="{% url 'confirm_purchase' product.id %}" method="post">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-success btn-lg w-75 mb-2">Confirm Payment 💳</button>
+            </form>
+
+            <a href="{% url 'index' %}" class="btn btn-secondary btn-lg w-75">Cancel ❌</a>
+        </div>
+    </div>
 </div>
 {% endblock %}

@@ -1,21 +1,151 @@
-/* Mobile styling */
+/* ===== Body ===== */
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+    background-color: #000 !important;
+}
+.navbar-brand {
+    color: #fdd835 !important;
+    font-weight: bold;
+}
+.nav-link {
+    color: #fff !important;
+    font-weight: 500;
+}
+.nav-link:hover {
+    color: #fdd835 !important;
+}
+.cart-badge {
+    position: absolute;
+    top: -6px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 50%;
+}
+
+/* ===== Footer ===== */
+footer {
+    background-color: #000;
+    color: #fdd835;
+    text-align: center;
+    padding: 10px;
+    margin-top: 40px;
+}
+
+/* ===== Product Cards ===== */
+.card {
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s;
+    margin-bottom: 20px;
+}
+.card:hover {
+    transform: translateY(-5px);
+}
+.card img {
+    height: 180px;
+    object-fit: cover;
+    width: 100%;
+}
+
+/* ===== Buttons ===== */
+.btn-gold {
+    background-color: #FFC107;
+    color: #000;
+    border: none;
+    font-weight: 600;
+    transition: 0.2s;
+}
+.btn-gold:hover {
+    background-color: #e0ac08;
+    color: white;
+}
+.btn-dark {
+    background-color: #343a40;
+    color: #fff;
+    font-weight: 500;
+    transition: 0.2s;
+}
+.btn-dark:hover {
+    background-color: #23272b;
+    color: #fff;
+}
+.btn-success {
+    background-color: #fdd835;
+    border: none;
+    color: #000;
+    font-weight: bold;
+    transition: 0.2s;
+}
+.btn-success:hover {
+    background-color: #e6c300;
+    color: #000;
+}
+.btn-secondary {
+    background-color: #6c757d;
+    color: #fff;
+}
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+/* ===== Product Descriptions ===== */
+.description {
+    font-size: 0.85rem;
+    color: #555;
+    margin-bottom: 8px;
+    height: 40px;
+    overflow: hidden;
+}
+
+/* ===== Cart Table ===== */
+.table thead {
+    background-color: #000;
+    color: #fdd835;
+}
+.table tbody tr:hover {
+    background-color: #fffbe6;
+}
+.table td, .table th {
+    vertical-align: middle;
+    text-align: center;
+}
+
+/* ===== Responsive Adjustments ===== */
 @media (max-width: 768px) {
-    .card {
-        width: 100%;
-        margin-bottom: 15px;
-    }
-
     .card img {
-        height: 120px !important;
-        object-fit: cover;
+        height: 140px;
     }
+    .card-title {
+        font-size: 1rem;
+    }
+    .card-text {
+        font-size: 0.9rem;
+    }
+    .btn {
+        padding: 6px 10px;
+        font-size: 0.9rem;
+    }
+}
 
+@media (max-width: 576px) {
+    .table td, .table th {
+        font-size: 0.8rem;
+        padding: 4px;
+    }
+    .btn-lg {
+        width: 100% !important;
+        margin-bottom: 8px;
+    }
     .card-body {
         padding: 10px;
-    }
-
-    .btn {
-        width: 100%;
-        margin-bottom: 5px;
     }
 }
