@@ -1,0 +1,32 @@
+[
+  {
+    "model": "products.product",
+    "pk": 1,
+    "fields": {
+      "name": "Apple",
+      "price": 120,
+      "stock": 50,
+      "image_url": "/static/images/apple.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 2,
+    "fields": {
+      "name": "Banana",
+      "price": 80,
+      "stock": 100,
+      "image_url": "/static/images/banana.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 3,
+    "fields": {
+      "name": "Orange",
+      "price": 100,
+      "stock": 75,
+      "image_url": "/static/images/orange.jpg"
+    }
+  }
+]
