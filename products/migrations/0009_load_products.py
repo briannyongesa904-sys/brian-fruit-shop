@@ -17,7 +17,7 @@ def load_products(apps, schema_editor):
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('products', '0001_initial'),  # replace 0001_initial with your last migration
+        ('products', '0008_product_unit_alter_product_price'),  # replace 0001_initial with your last migration
     ]
 
     operations = [
