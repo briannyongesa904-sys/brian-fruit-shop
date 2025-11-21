@@ -28,5 +28,25 @@
       "stock": 75,
       "image_url": "/static/images/orange.jpg"
     }
+  },
+  {
+    "model": "products.product",
+    "pk": 4,
+    "fields": {
+      "name": "Mango",
+      "price": 150,
+      "stock": 40,
+      "image_url": "/static/images/mango.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 5,
+    "fields": {
+      "name": "Pineapple",
+      "price": 200,
+      "stock": 30,
+      "image_url": "/static/images/pineapple.jpg"
+    }
   }
 ]
