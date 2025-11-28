@@ -1,0 +1,167 @@
+[
+  {
+    "model": "products.product",
+    "pk": 1,
+    "fields": {
+      "name": "Orange",
+      "price": 120.0,
+      "stock": 100,
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Orange-Fruit-Pieces.jpg",
+      "unit": "1kg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 2,
+    "fields": {
+      "name": "Apple",
+      "price": 350.0,
+      "stock": 60,
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/15/Red_Apple.jpg",
+      "unit": "1kg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 3,
+    "fields": {
+      "name": "Pineapple",
+      "price": 200.0,
+      "stock": 50,
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Pineapple_and_cross_section.jpg",
+      "unit": "1kg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 4,
+    "fields": {
+      "name": "Banana",
+      "price": 180.0,
+      "stock": 100,
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Banana-Single.jpg",
+      "unit": "1kg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 5,
+    "fields": {
+      "name": "Mango",
+      "price": 150.0,
+      "stock": 120,
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/90/Hapus_Mango.jpg",
+      "unit": "1kg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 6,
+    "fields": {
+      "name": "Watermelon",
+      "price": 40.0,
+      "stock": 80,
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Watermelon_cross_BNC.jpg",
+      "unit": "1kg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 7,
+    "fields": {
+      "name": "Strawberry",
+      "price": 200.0,
+      "stock": 50,
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/29/PerfectStrawberry.jpg",
+      "unit": "1kg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 8,
+    "fields": {
+      "name": "Avocado",
+      "price": 180.0,
+      "stock": 65,
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Avocado-Dice.jpg",
+      "unit": "1kg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 9,
+    "fields": {
+      "name": "Guava",
+      "price": 250.0,
+      "stock": 60,
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Guava-Kids.jpg",
+      "unit": "1kg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 10,
+    "fields": {
+      "name": "Papaya",
+      "price": 170.0,
+      "stock": 30,
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Papaya_Fruit.jpg",
+      "unit": "1kg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 11,
+    "fields": {
+      "name": "Coconut",
+      "price": 300.0,
+      "stock": 25,
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/45/Coconut-Fruits.jpg",
+      "unit": "1kg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 12,
+    "fields": {
+      "name": "Grapes",
+      "price": 190.0,
+      "stock": 70,
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Grapes_Bunch.jpg",
+      "unit": "1kg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 13,
+    "fields": {
+      "name": "Peach",
+      "price": 220.0,
+      "stock": 40,
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Peach-Fruit.jpg",
+      "unit": "1kg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 14,
+    "fields": {
+      "name": "Plum",
+      "price": 160.0,
+      "stock": 50,
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/12/Plum-Fruit.jpg",
+      "unit": "1kg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 15,
+    "fields": {
+      "name": "Fig",
+      "price": 800.0,
+      "stock": 45,
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/30/Figs.jpg",
+      "unit": "1kg"
+    }
+  }
+]

@@ -4,8 +4,12 @@ import os
 
 def load_products(apps, schema_editor):
     Product = apps.get_model('products', 'Product')
-    fixture_path = os.path.join(os.path.dirname(__file__), '../fixtures/products.json')
-    with open(fixture_path, encoding='utf-8') as f:
+
+    # Path to the fixtures folder
+    fixture_path = os.path.join(os.path.dirname(__file__), '../fixtures/products_fixed.json')
+
+    # Use utf-8-sig to handle possible BOM in the JSON file
+    with open(fixture_path, encoding='utf-8-sig') as f:
         data = json.load(f)
         for item in data:
             fields = item['fields']
