@@ -3,26 +3,21 @@
 {% block content %}
 <h2 class="text-center mb-4">Fresh Fruits for Sale 🍉</h2>
 
-<div class="row g-3">
+<div class="row g-4">
     {% for product in products %}
-    <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
         <div class="card product-card h-100">
-            <div class="img-wrapper">
-                <img src="{{ product.image_url }}" alt="{{ product.name }}">
-            </div>
+            <img src="{{ product.image_url }}" class="card-img-top" alt="{{ product.name }}">
 
             <div class="card-body text-center d-flex flex-column">
-                <h6 class="card-title mb-1">{{ product.name }}</h6>
-
-                <p class="price mb-2">
-                    Ksh {{ product.price }}
-                </p>
+                <h6 class="card-title">{{ product.name }}</h6>
+                <p class="price">Ksh {{ product.price }}</p>
 
                 <div class="mt-auto">
-                    <a href="{% url 'checkout' product.id %}" class="btn btn-gold btn-sm w-100 mb-2">
+                    <a href="{% url 'checkout' product.id %}" class="btn btn-gold w-100 mb-2">
                         Buy Now
                     </a>
-                    <a href="{% url 'add_to_cart' product.id %}" class="btn btn-dark btn-sm w-100">
+                    <a href="{% url 'add_to_cart' product.id %}" class="btn btn-dark w-100">
                         Add to Cart
                     </a>
                 </div>

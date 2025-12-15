@@ -1,96 +1,38 @@
-/* ===== Global ===== */
-body {
-    background-color: #f8f9fa;
-    font-family: Arial, sans-serif;
-}
-
-/* ===== Navbar ===== */
-.navbar {
-    background-color: #000 !important;
-}
-.navbar-brand {
-    color: #fdd835 !important;
-    font-weight: bold;
-}
-.nav-link {
-    color: #fff !important;
-}
-.nav-link:hover {
-    color: #fdd835 !important;
-}
-
-/* ===== Footer ===== */
-footer {
-    background-color: #000;
-    color: #fdd835;
-    text-align: center;
-    padding: 10px;
-    margin-top: 40px;
-}
-
 /* ===== Product Cards ===== */
 .product-card {
-    border-radius: 12px;
+    border-radius: 14px;
     overflow: hidden;
     border: none;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.08);
 }
 
-/* Image container fixes overlap */
-.img-wrapper {
+/* Let images keep natural ratio */
+.card-img-top {
     width: 100%;
-    height: 140px;
-    overflow: hidden;
-}
-
-.img-wrapper img {
-    width: 100%;
-    height: 100%;
+    height: auto;
+    max-height: 260px;
     object-fit: cover;
-    display: block;
 }
 
-/* Card body */
-.card-body {
-    padding: 10px;
-}
-
+/* Text */
 .card-title {
-    font-size: 0.95rem;
     font-weight: 600;
+    font-size: 1rem;
 }
 
 .price {
     font-weight: bold;
     color: #2e7d32;
-    font-size: 0.9rem;
 }
 
-/* ===== Buttons ===== */
+/* Buttons */
 .btn-gold {
     background-color: #fdd835;
     color: #000;
-    border: none;
     font-weight: 600;
+    border: none;
 }
+
 .btn-gold:hover {
     background-color: #e6c300;
-}
-
-.btn-dark {
-    background-color: #343a40;
-    border: none;
-}
-.btn-dark:hover {
-    background-color: #23272b;
-}
-
-/* ===== Desktop tweaks ===== */
-@media (min-width: 768px) {
-    .img-wrapper {
-        height: 180px;
-    }
-    .card-title {
-        font-size: 1rem;
-    }
 }
