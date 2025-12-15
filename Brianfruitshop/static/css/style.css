@@ -40,20 +40,56 @@ footer {
     margin-top: 40px;
 }
 
-/* ===== Product Cards ===== */
+/* ===== PRODUCT CARD FIX (IMPORTANT) ===== */
 .card {
     border-radius: 12px;
     overflow: hidden;
     transition: transform 0.2s;
     margin-bottom: 20px;
+
+    /* KEY FIX */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 .card:hover {
     transform: translateY(-5px);
 }
+
+/* Image container – forces equal image height */
 .card img {
-    height: 180px;
-    object-fit: cover;
+    height: 160px;
     width: 100%;
+    object-fit: contain;   /* changed from cover → contain */
+    background-color: #fff;
+}
+
+/* Card body stretches evenly */
+.card-body {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+/* Product title fixed height */
+.card-title {
+    font-size: 1rem;
+    font-weight: 600;
+    min-height: 40px;
+}
+
+/* Description fixed height */
+.description {
+    font-size: 0.85rem;
+    color: #555;
+    margin-bottom: 8px;
+    min-height: 36px;
+    overflow: hidden;
+}
+
+/* Push buttons to bottom */
+.card-body .btn {
+    margin-top: auto;
 }
 
 /* ===== Buttons ===== */
@@ -78,33 +114,6 @@ footer {
     background-color: #23272b;
     color: #fff;
 }
-.btn-success {
-    background-color: #fdd835;
-    border: none;
-    color: #000;
-    font-weight: bold;
-    transition: 0.2s;
-}
-.btn-success:hover {
-    background-color: #e6c300;
-    color: #000;
-}
-.btn-secondary {
-    background-color: #6c757d;
-    color: #fff;
-}
-.btn-secondary:hover {
-    background-color: #5a6268;
-}
-
-/* ===== Product Descriptions ===== */
-.description {
-    font-size: 0.85rem;
-    color: #555;
-    margin-bottom: 8px;
-    height: 40px;
-    overflow: hidden;
-}
 
 /* ===== Cart Table ===== */
 .table thead {
@@ -125,27 +134,20 @@ footer {
         height: 140px;
     }
     .card-title {
-        font-size: 1rem;
-    }
-    .card-text {
-        font-size: 0.9rem;
+        font-size: 0.95rem;
     }
     .btn {
         padding: 6px 10px;
-        font-size: 0.9rem;
+        font-size: 0.85rem;
     }
 }
 
 @media (max-width: 576px) {
-    .table td, .table th {
-        font-size: 0.8rem;
-        padding: 4px;
-    }
-    .btn-lg {
-        width: 100% !important;
-        margin-bottom: 8px;
+    .card img {
+        height: 120px;
     }
     .card-body {
         padding: 10px;
     }
 }
+
