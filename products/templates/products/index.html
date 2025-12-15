@@ -1,39 +1,32 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h4 class="text-center mb-4 fw-bold">Fresh Fruits for Sale 🍉</h4>
+<h2 class="text-center mb-4">Fresh Fruits for Sale 🍉</h2>
 
-<div class="row g-3 justify-content-center">
+<div class="row g-3">
     {% for product in products %}
     <div class="col-6 col-sm-6 col-md-4 col-lg-3">
-        <div class="card product-card shadow-sm border-0 h-100">
-
-            <!-- Image wrapper for equal height -->
-            <div class="product-image">
+        <div class="card product-card h-100">
+            <div class="img-wrapper">
                 <img src="{{ product.image_url }}" alt="{{ product.name }}">
             </div>
 
             <div class="card-body text-center d-flex flex-column">
-                <h6 class="product-title">{{ product.name }}</h6>
+                <h6 class="card-title mb-1">{{ product.name }}</h6>
 
-                {% if product.short_description %}
-                <p class="product-desc">{{ product.short_description }}</p>
-                {% endif %}
-
-                <p class="fw-bold text-success mb-2">
-                    Ksh {{ product.price }} / kg
+                <p class="price mb-2">
+                    Ksh {{ product.price }}
                 </p>
 
                 <div class="mt-auto">
-                    <a href="{% url 'checkout' product.id %}" class="btn btn-gold btn-sm me-1">
-                        Buy
+                    <a href="{% url 'checkout' product.id %}" class="btn btn-gold btn-sm w-100 mb-2">
+                        Buy Now
                     </a>
-                    <a href="{% url 'add_to_cart' product.id %}" class="btn btn-dark btn-sm">
-                        🛒
+                    <a href="{% url 'add_to_cart' product.id %}" class="btn btn-dark btn-sm w-100">
+                        Add to Cart
                     </a>
                 </div>
             </div>
-
         </div>
     </div>
     {% endfor %}

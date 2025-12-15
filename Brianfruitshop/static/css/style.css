@@ -1,4 +1,4 @@
-/* ===== Body ===== */
+/* ===== Global ===== */
 body {
     background-color: #f8f9fa;
     font-family: Arial, sans-serif;
@@ -14,21 +14,9 @@ body {
 }
 .nav-link {
     color: #fff !important;
-    font-weight: 500;
 }
 .nav-link:hover {
     color: #fdd835 !important;
-}
-.cart-badge {
-    position: absolute;
-    top: -6px;
-    right: -10px;
-    background-color: red;
-    color: white;
-    font-size: 12px;
-    font-weight: bold;
-    padding: 2px 6px;
-    border-radius: 50%;
 }
 
 /* ===== Footer ===== */
@@ -40,114 +28,69 @@ footer {
     margin-top: 40px;
 }
 
-/* ===== PRODUCT CARD FIX (IMPORTANT) ===== */
-.card {
+/* ===== Product Cards ===== */
+.product-card {
     border-radius: 12px;
     overflow: hidden;
-    transition: transform 0.2s;
-    margin-bottom: 20px;
-
-    /* KEY FIX */
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-.card:hover {
-    transform: translateY(-5px);
+    border: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
 
-/* Image container – forces equal image height */
-.card img {
-    height: 160px;
+/* Image container fixes overlap */
+.img-wrapper {
     width: 100%;
-    object-fit: contain;   /* changed from cover → contain */
-    background-color: #fff;
-}
-
-/* Card body stretches evenly */
-.card-body {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-}
-
-/* Product title fixed height */
-.card-title {
-    font-size: 1rem;
-    font-weight: 600;
-    min-height: 40px;
-}
-
-/* Description fixed height */
-.description {
-    font-size: 0.85rem;
-    color: #555;
-    margin-bottom: 8px;
-    min-height: 36px;
+    height: 140px;
     overflow: hidden;
 }
 
-/* Push buttons to bottom */
-.card-body .btn {
-    margin-top: auto;
+.img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Card body */
+.card-body {
+    padding: 10px;
+}
+
+.card-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.price {
+    font-weight: bold;
+    color: #2e7d32;
+    font-size: 0.9rem;
 }
 
 /* ===== Buttons ===== */
 .btn-gold {
-    background-color: #FFC107;
+    background-color: #fdd835;
     color: #000;
     border: none;
     font-weight: 600;
-    transition: 0.2s;
 }
 .btn-gold:hover {
-    background-color: #e0ac08;
-    color: white;
+    background-color: #e6c300;
 }
+
 .btn-dark {
     background-color: #343a40;
-    color: #fff;
-    font-weight: 500;
-    transition: 0.2s;
+    border: none;
 }
 .btn-dark:hover {
     background-color: #23272b;
-    color: #fff;
 }
 
-/* ===== Cart Table ===== */
-.table thead {
-    background-color: #000;
-    color: #fdd835;
-}
-.table tbody tr:hover {
-    background-color: #fffbe6;
-}
-.table td, .table th {
-    vertical-align: middle;
-    text-align: center;
-}
-
-/* ===== Responsive Adjustments ===== */
-@media (max-width: 768px) {
-    .card img {
-        height: 140px;
+/* ===== Desktop tweaks ===== */
+@media (min-width: 768px) {
+    .img-wrapper {
+        height: 180px;
     }
     .card-title {
-        font-size: 0.95rem;
-    }
-    .btn {
-        padding: 6px 10px;
-        font-size: 0.85rem;
+        font-size: 1rem;
     }
 }
-
-@media (max-width: 576px) {
-    .card img {
-        height: 120px;
-    }
-    .card-body {
-        padding: 10px;
-    }
-}
-
