@@ -2,22 +2,47 @@
 
 {% block content %}
 <div class="container mt-5">
-    <div class="row justify-content-center">
-        <div class="col-md-6 col-sm-10 text-center">
-            <h2 class="mb-4">Payment Page 💳</h2>
-            <img src="{{ product.image_url }}" alt="{{ product.name }}" class="img-fluid rounded mb-3" style="max-width: 200px;">
+    <h2 class="text-center mb-4">💳 Payment</h2>
 
-            <h4>{{ product.name }}</h4>
-            <p class="description mb-2">{{ product.short_description }}</p>
-            <p class="text-success fw-bold mb-3">Ksh {{ product.price }}</p>
-
-            <form action="{% url 'confirm_purchase' product.id %}" method="post">
-                {% csrf_token %}
-                <button type="submit" class="btn btn-success btn-lg w-75 mb-2">Confirm Payment 💳</button>
-            </form>
-
-            <a href="{% url 'index' %}" class="btn btn-secondary btn-lg w-75">Cancel ❌</a>
-        </div>
+    {% if cart_items %}
+    <div class="table-responsive">
+        <table class="table table-bordered align-middle text-center">
+            <thead class="table-dark">
+                <tr>
+                    <th>Image</th>
+                    <th>Product</th>
+                    <th>Price (Ksh)</th>
+                    <th>Quantity</th>
+                    <th>Total (Ksh)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in cart_items %}
+                <tr>
+                    <td style="width: 120px;">
+                        <img src="{{ item.product.image_url }}" alt="{{ item.product.name }}" class="img-fluid rounded">
+                    </td>
+                    <td>{{ item.product.name }}</td>
+                    <td>{{ item.product.price }}</td>
+                    <td>{{ item.quantity }}</td>
+                    <td><strong>{{ item.total|default:item.product.price }}</strong></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     </div>
+
+    <div class="text-center mt-4">
+        <h4 class="fw-bold mb-3">Grand Total: Ksh {{ total }}</h4>
+        <a href="{% url 'confirm_purchase' %}" class="btn btn-success btn-lg">
+            Confirm Purchase ✅
+        </a>
+    </div>
+    {% else %}
+    <div class="alert alert-warning text-center" role="alert">
+        Your cart is empty 😢 <br>
+        <a href="{% url 'index' %}" class="btn btn-dark mt-3">Continue Shopping 🍎</a>
+    </div>
+    {% endif %}
 </div>
 {% endblock %}

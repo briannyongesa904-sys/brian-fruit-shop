@@ -21,16 +21,18 @@
     {% for product in products %}
     <div class="col-12 col-sm-6 col-md-4 col-lg-3">
         <div class="card product-card h-100">
-            <img src="{{ product.image_url }}" class="card-img-top" alt="{{ product.name }}">
+            <img src="{{ product.image_url|default:'/static/img/default.png' }}" class="card-img-top" alt="{{ product.name|default:'Unnamed' }}">
 
             <div class="card-body text-center d-flex flex-column">
-                <h6 class="card-title">{{ product.name }}</h6>
-                <p class="price">Ksh {{ product.price }}</p>
+                <h6 class="card-title">{{ product.name|default:'Unnamed' }}</h6>
+                <p class="price">Ksh {{ product.price|default:0 }}</p>
 
                 <div class="mt-auto">
-                    <a href="{% url 'checkout' product.id %}" class="btn btn-gold w-100 mb-2">
+                    <!-- Buy Now → adds this product and goes to checkout -->
+                    <a href="{% url 'buy_now' product.id %}" class="btn btn-gold w-100 mb-2">
                         Buy Now
                     </a>
+                    <!-- Add single product to cart -->
                     <a href="{% url 'add_to_cart' product.id %}" class="btn btn-dark w-100">
                         Add to Cart
                     </a>
@@ -46,24 +48,26 @@
 </div>
 
 <!-- ================= HIRE ME SECTION ================= -->
-<section id="hire-me" class="hire-me">
-    <h2>Need a website like this?</h2>
+<section id="hire-me" class="hire-me mt-5">
+    <h2 class="text-center mb-3">Need a website like this?</h2>
 
-    <p>
+    <p class="text-center">
         I’m a web developer who builds responsive websites and web applications
         using Django, databases, and modern frontend tools.
     </p>
 
-    <ul>
+    <ul class="list-unstyled text-center mb-4">
         <li>✔️ Business & portfolio websites</li>
         <li>✔️ E-commerce websites</li>
         <li>✔️ Backend & database setup</li>
         <li>✔️ Deployment & hosting</li>
     </ul>
 
-    <div class="contact-buttons">
+    <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
         <a href="mailto:briannyongesa904@gmail.com" class="btn-primary mb-2">Email Me</a>
-        <a href="https://wa.me/254728520299?text=Hi,%20I%20saw%20your%20demo%20website%20and%20I%20want%20a%20website" class="btn-primary">WhatsApp Me</a>
+        <a href="https://wa.me/254728520299?text=Hi,%20I%20saw%20your%20demo%20website%20and%20I%20want%20a%20website" class="btn-primary">
+            WhatsApp Me
+        </a>
     </div>
 </section>
 

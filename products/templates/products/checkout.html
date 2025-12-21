@@ -2,50 +2,47 @@
 
 {% block content %}
 <div class="container mt-5">
-    <div class="row justify-content-center">
-        <div class="col-md-6 col-sm-10 text-center">
-            <h2 class="mb-4">Confirm Your Purchase 🛒</h2>
-            <img src="{{ product.image_url }}" alt="{{ product.name }}" class="img-fluid rounded mb-3">
+    <h2 class="text-center mb-4">💳 Checkout</h2>
 
-            <h4>{{ product.name }}</h4>
-            <p class="description mb-2">{{ product.short_description }}</p>
-            <p class="text-success fw-bold" id="price-text">Ksh {{ product.price }} per Kg</p>
-
-            <div class="mt-3">
-                <label for="weightInput" class="form-label fw-semibold">Enter Weight (Kg):</label>
-                <input type="number" id="weightInput" class="form-control text-center mx-auto" min="0.5" step="0.5" value="1" style="max-width: 150px;">
-            </div>
-
-            <p class="mt-3 text-primary fw-semibold" id="total-text">
-                Total: Ksh {{ product.price }}
-            </p>
-
-            <div class="mt-4 d-flex flex-column flex-sm-row justify-content-center gap-2">
-                <a id="payment-link" href="{% url 'payment_page' product.id %}?weight=1" class="btn btn-success btn-lg">
-                    Proceed to Payment 💳
-                </a>
-                <a href="{% url 'index' %}" class="btn btn-secondary btn-lg">Go Back</a>
-            </div>
-        </div>
+    {% if cart_items %}
+    <div class="table-responsive">
+        <table class="table table-bordered align-middle text-center">
+            <thead class="table-dark">
+                <tr>
+                    <th>Image</th>
+                    <th>Product</th>
+                    <th>Price (Ksh)</th>
+                    <th>Quantity</th>
+                    <th>Total (Ksh)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in cart_items %}
+                <tr>
+                    <td style="width: 120px;">
+                        <img src="{{ item.product.image_url }}" alt="{{ item.product.name }}" class="img-fluid rounded">
+                    </td>
+                    <td>{{ item.product.name }}</td>
+                    <td>{{ item.product.price }}</td>
+                    <td>{{ item.quantity }}</td>
+                    <td><strong>{{ item.total|default:item.product.price }}</strong></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     </div>
+
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center mt-4">
+        <h4 class="fw-bold mb-3 mb-md-0">Grand Total: Ksh {{ total }}</h4>
+        <a href="{% url 'payment_page' %}" class="btn btn-success btn-lg">
+            Proceed to Payment 💳
+        </a>
+    </div>
+    {% else %}
+    <div class="alert alert-warning text-center" role="alert">
+        Your cart is empty 😢 <br>
+        <a href="{% url 'index' %}" class="btn btn-dark mt-3">Continue Shopping 🍎</a>
+    </div>
+    {% endif %}
 </div>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    const basePrice = {{ product.price|floatformat:2 }};
-    const productId = {{ product.id }};
-    const weightInput = document.getElementById("weightInput");
-    const totalText = document.getElementById("total-text");
-    const paymentLink = document.getElementById("payment-link");
-
-    function updateTotal() {
-        const weight = parseFloat(weightInput.value) || 0;
-        const total = basePrice * weight;
-        totalText.textContent = `Total: Ksh ${total.toFixed(2)}`;
-        paymentLink.href = `/payment/${productId}/?weight=${weight}`;
-    }
-
-    weightInput.addEventListener("input", updateTotal);
-});
-</script>
 {% endblock %}
