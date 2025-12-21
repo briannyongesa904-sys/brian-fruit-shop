@@ -1,6 +1,20 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
+<!-- ================= HERO SECTION ================= -->
+<section class="hero">
+    <h1>I build modern websites for small businesses</h1>
+    <p>Fast • Mobile-friendly • Secure • Database-powered</p>
+
+    <a href="#hire-me" class="btn-primary">Hire Me</a>
+
+    <p class="demo-note">
+        ⚠️ This is a demo e-commerce website built for portfolio purposes.
+    </p>
+</section>
+
+<!-- ================= PRODUCTS SECTION ================= -->
 <h2 class="text-center mb-4">Fresh Fruits for Sale 🍉</h2>
 
 <div class="row g-4">
@@ -24,6 +38,33 @@
             </div>
         </div>
     </div>
+    {% empty %}
+    <p class="text-center text-muted">
+        Products may be unavailable while the demo database is inactive.
+    </p>
     {% endfor %}
 </div>
+
+<!-- ================= HIRE ME SECTION ================= -->
+<section id="hire-me" class="hire-me">
+    <h2>Need a website like this?</h2>
+
+    <p>
+        I’m a web developer who builds responsive websites and web applications
+        using Django, databases, and modern frontend tools.
+    </p>
+
+    <ul>
+        <li>✔️ Business & portfolio websites</li>
+        <li>✔️ E-commerce websites</li>
+        <li>✔️ Backend & database setup</li>
+        <li>✔️ Deployment & hosting</li>
+    </ul>
+
+    <div class="contact-buttons">
+        <a href="mailto:briannyongesa904@gmail.com" class="btn-primary mb-2">Email Me</a>
+        <a href="https://wa.me/254728520299?text=Hi,%20I%20saw%20your%20demo%20website%20and%20I%20want%20a%20website" class="btn-primary">WhatsApp Me</a>
+    </div>
+</section>
+
 {% endblock %}

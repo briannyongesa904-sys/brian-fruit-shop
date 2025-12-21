@@ -1,4 +1,4 @@
-/* ===== Product Cards ===== */
+/* ===== PRODUCT CARDS (existing) ===== */
 .product-card {
     border-radius: 14px;
     overflow: hidden;
@@ -6,7 +6,6 @@
     box-shadow: 0 6px 14px rgba(0,0,0,0.08);
 }
 
-/* Let images keep natural ratio */
 .card-img-top {
     width: 100%;
     height: auto;
@@ -14,7 +13,6 @@
     object-fit: cover;
 }
 
-/* Text */
 .card-title {
     font-weight: 600;
     font-size: 1rem;
@@ -25,7 +23,6 @@
     color: #2e7d32;
 }
 
-/* Buttons */
 .btn-gold {
     background-color: #fdd835;
     color: #000;
@@ -35,4 +32,99 @@
 
 .btn-gold:hover {
     background-color: #e6c300;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: #f9fafb;
+    margin-bottom: 50px;
+}
+
+.hero h1 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #2563eb;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.btn-primary:hover {
+    background: #1e40af;
+}
+
+.demo-note {
+    margin-top: 18px;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+/* ===== HIRE ME SECTION ===== */
+.hire-me {
+    margin-top: 80px;
+    padding: 60px 20px;
+    text-align: center;
+    background: #ffffff;
+}
+
+.hire-me h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.hire-me p {
+    max-width: 700px;
+    margin: 0 auto 20px;
+    color: #555;
+}
+
+.hire-me ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 25px;
+}
+
+.hire-me ul li {
+    margin: 8px 0;
+    font-weight: 500;
+}
+
+/* Contact buttons */
+.contact-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* space between buttons */
+    margin-top: 20px;
+}
+
+.contact-buttons .btn-primary {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #2563eb;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.contact-buttons .btn-primary:hover {
+    background: #1e40af;
 }
