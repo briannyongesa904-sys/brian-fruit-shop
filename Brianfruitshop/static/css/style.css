@@ -128,3 +128,61 @@
 .contact-buttons .btn-primary:hover {
     background: #1e40af;
 }
+
+/* ================= TESTIMONIALS ================= */
+.testimonials {
+    padding: 60px 20px;
+    background: #f8f9fa;
+}
+
+.testimonial-card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+}
+
+.testimonial-text {
+    font-style: italic;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ================= TESTIMONIALS ================= */
+.testimonials {
+    padding: 60px 20px;
+    background: #f8f9fa;
+}
+
+.testimonial-card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+}
+
+.testimonial-text {
+    font-style: italic;
+    color: #333;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+/* ⭐ Star Ratings */
+.stars {
+    color: #f5b301;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
